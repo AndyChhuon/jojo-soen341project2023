@@ -1,1 +1,3 @@
 # jojo-soen341project2023
+Sprint 1
+The description of the project: In this project, we will provide a career services platform where students (people looking for jobs) can post and update their portfolios and employers can post jobs. With the help of this, you can carry out a job head hunting in your own comfort. This helps iob-seekers and emplovers identify job candidates according to their needs. To access this online career services system, all participants need to create an account using their email and password, and then log in using their account information. Using this system, employers will receive notifications when students apply for their job offers, and students will receive notifications when they are called for interviews.
