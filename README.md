@@ -14,6 +14,7 @@ Jojo seeks to fix this problem, thanks to an algorithm that matches various comp
 
 - Andy Chhuon - Tecnical Lead (Github: AndyChhuon)
 - Kevin Xu    - Front-end developer (Github: Starmarke)
+- Camila-Paz Vejar-Rojas - Front-end developer/Project Manager (Github: camilavejar)
 
 ## Technologies
 
