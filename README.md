@@ -1,5 +1,12 @@
 # jojo-soen341project2023
 
-Members and roles
+## Members and roles
 
-Technologies
+- Andy Chhuon - Tecnical Lead
+
+## Technologies
+
+- Bootstrap
+- MongoDB
+- Google Login
+- .Net/C# REST API
