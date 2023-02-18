@@ -36,6 +36,15 @@ export default function Navbar() {
                 <FontAwesomeIcon icon={faChevronDown} className="nav-chevron" />
               </a>
             </li>
+            <li>
+              <a>
+                form stuff
+                <FontAwesomeIcon icon={faChevronDown} className="nav-chevron" />
+              </a>
+              <div className="dropdown-menu">
+                <a href="/studentform">Student Form</a>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
