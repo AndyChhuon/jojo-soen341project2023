@@ -1,4 +1,4 @@
-import Navbar from "./Components/Navbar/Navbar";
+import Navbar from "./Components/Navbar/JojoNavbar";
 //import route and routes
 import { Route, Routes } from "react-router-dom";
 //import studentform
@@ -8,15 +8,12 @@ import Home from "./pages/home";
 function App() {
   return (
     <>
-      
-      <Navbar>
+      <Navbar />
+
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<div></div>} />
         <Route path="/studentForm" element={<StudentForm />} />
       </Routes>
-      </Navbar>
-      {/*  */}
-      <StudentForm></StudentForm>
     </>
   );
 }
