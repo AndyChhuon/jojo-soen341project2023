@@ -1,6 +1,7 @@
 //Sudent form component
 import React, { useState } from "react";
-
+import Container from "react-bootstrap/Container";
+// import profile from "./../../Images/pfp.png";
 
 export default function StudentForm() {
   const [student, setStudent] = useState({
@@ -50,108 +51,154 @@ export default function StudentForm() {
     setStudent({ ...student, workexp: event.target.value });
   };
 
-
   const submitHandler = (event) => {
     event.preventDefault();
     return false;
   };
   //input fields for student form
+
   return (
     <section>
-      <h2>Student Form</h2>
-      <form onSubmit={submitHandler}>
-        <div>
-          <label htmlFor="firstName">First Name: </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            required
-            value={student.firstName}
-            onChange={handleFirstNameInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName">Last Name: </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            required
-            value={student.lastName}
-            onChange={handleLastNameInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email: </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            value={student.email}
-            onChange={handleEmailInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="phone">Phone Number: </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            required
-            value={student.phone}
-            onChange={handlePhoneInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="city">City: </label>
-          <input
-            type="text"
-            id="city"
-            name="city"
-            required
-            value={student.city}
-            onChange={handleCityInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="state">State/Province: </label>
-          <input
-            type="text"
-            id="state"
-            name="state"
-            required
-            value={student.state}
-            onChange={handleStateInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="school">School</label>
-          <input
-            type="text"
-            id="school"
-            name="school"
-            required
-            value={student.school}
-            onChange={handleSchoolInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="workexp">Work Experience: </label>
-          <input
-            type="text" 
-            id="workexp"
-            name="workexp"
-            required
-            value={student.workexp}
-            onChange={handleWorkexpInputChange}
-          />
-        </div>
+      <Container>
+        <h2>Student Form</h2>
+        <form onSubmit={submitHandler}>
+        <div class="container">
+          
+  <div class="row">
+    <div class="col-sm">
+      {/* First of three columns */}
+      {/* <img src="" alt="pfp" class="img-rounded"></img> */}
+      
+<div class="square rounded p-5 bg-secondary">
+  <small>profile image</small>
+</div>
+
+    </div>
+    <div class="col-sm">
+      {/* Second of three columns */}
+
+      <label htmlFor="firstName">First Name: </label>
+              
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  name="firstName"
+                  required
+                  value={student.firstName}
+                  onChange={handleFirstNameInputChange}
+                />
+
+                <label htmlFor="email">Email: </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                  value={student.email}
+                  onChange={handleEmailInputChange}/>
+
+<label htmlFor="city">City: </label>
+              
+              <input
+                type="text"
+                id="city"
+                name="city"
+                class="form-control"
+                required
+                value={student.city}
+                onChange={handleCityInputChange}
+              />
+                
+                <label htmlFor="school">School</label>
+              
+              <input
+                type="text"
+                id="school"
+                name="school"
+                class="form-control"
+                required
+                value={student.school}
+                onChange={handleSchoolInputChange}
+              />
+    </div>
+    <div class="col-sm">
+      {/* Third of three columns */}
+
+        <label htmlFor="lastName">Last Name: </label>
+              
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  class="form-control"
+                  required
+                  value={student.lastName}
+                  onChange={handleLastNameInputChange}
+                />
+
+<label htmlFor="phone">Phone Number: </label>
+             
+             <input
+               type="tel"
+               id="phone"
+               name="phone"
+               class="form-control"
+               required
+               value={student.phone}
+               onChange={handlePhoneInputChange}
+             />
+
+<label htmlFor="state">State/Province: </label>
+             
+             <input
+               type="text"
+               id="state"
+               name="state"
+               class="form-control"
+               required
+               value={student.state}
+               onChange={handleStateInputChange}
+             />
+ <label htmlFor="school">Other input</label>
+              
+              <input
+                type="text"
+                id="school"
+                name="school"
+                class="form-control"
+                required
+                // value={student.school}
+                // onChange={handleSchoolInputChange}
+              />
+    </div>
+  </div>
+  <div class="form-group">
+            <label htmlFor="workexp">Work Experience: </label>
+            <textarea
+              type="text"
+              id="workexp"
+              name="workexp"
+              class="form-control"
+              rows="5"
+              required
+              value={student.workexp}
+              onChange={handleWorkexpInputChange}
+            />
+          </div>
+          <div class="mt-2 col-md-12">
+            <div class="text-center">
+            <div class="d-grid gap-2 d-md-block">
+              <button type="submit" class="btn btn-success  ">
+                Create Profile
+              </button>
+              </div>
+            </div>
+          </div>
+</div></form>
         
-        <button type="submit">Submit</button>
-        
-      </form>
+      </Container>
     </section>
   );
 }
