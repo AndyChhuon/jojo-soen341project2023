@@ -3,6 +3,8 @@ import Navbar from "./Components/Navbar/JojoNavbar";
 import { Route, Routes } from "react-router-dom";
 //import studentform
 import StudentForm from "./pages/studentform";
+import JobPosts from "./pages/JobPosts";
+
 import Home from "./pages/home";
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<div></div>} />
         <Route path="/studentForm" element={<StudentForm />} />
+        <Route path="/jobs" element={<JobPosts />} />
       </Routes>
     </>
   );

@@ -1,11 +1,17 @@
 import "./Navbar.less";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faUsers, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHouse,
+  faUsers,
+  faUser,
+  faBriefcase,
+} from "@fortawesome/free-solid-svg-icons";
 import jojoLogo from "./../../Images/jojo-black.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { LinkContainer } from "react-router-bootstrap";
 
 export default function JojoNavbar() {
   const navDropdownTitle = (
@@ -18,43 +24,52 @@ export default function JojoNavbar() {
   return (
     <Navbar bg="light" variant="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/" style={{ padding: 0, margin: 0 }}>
-          <img
-            src={jojoLogo}
-            height="35"
-            className="d-inline-block align-top"
-            alt="React Bootstrap logo"
-          />
-        </Navbar.Brand>
+        <LinkContainer to="/">
+          <Navbar.Brand style={{ padding: 0, margin: 0 }}>
+            <img
+              src={jojoLogo}
+              height="35"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </Navbar.Brand>
+        </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link
-              href="/"
-              className="background-grey"
-              style={{ color: "black" }}
-            >
-              <FontAwesomeIcon
-                className="pad-right-5"
-                icon={faHouse}
-                style={{ color: "black" }}
-              />
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#link"
-              className="background-grey"
-              style={{ color: "black" }}
-            >
-              <FontAwesomeIcon className="pad-right-5" icon={faUsers} />
-              About
-            </Nav.Link>
+            <LinkContainer to="/" style={{ color: "black" }}>
+              <Nav.Link href="/" className="background-grey">
+                <FontAwesomeIcon
+                  className="pad-right-5"
+                  icon={faHouse}
+                  style={{ color: "black" }}
+                />
+                Home
+              </Nav.Link>
+            </LinkContainer>
+
+            <LinkContainer style={{ color: "black" }} to="/jobs">
+              <Nav.Link className="background-grey">
+                <FontAwesomeIcon className="pad-right-5" icon={faBriefcase} />
+                Jobs
+              </Nav.Link>
+            </LinkContainer>
+
+            <LinkContainer style={{ color: "black" }} to="/about">
+              <Nav.Link className="background-grey">
+                <FontAwesomeIcon className="pad-right-5" icon={faUsers} />
+                About
+              </Nav.Link>
+            </LinkContainer>
+
             <NavDropdown
               title={navDropdownTitle}
               id="basic-nav-dropdown"
               className="background-grey"
             >
-              <NavDropdown.Item href="/studentForm">Create</NavDropdown.Item>
+              <LinkContainer to="/studentForm">
+                <NavDropdown.Item href="/studentForm">Create</NavDropdown.Item>
+              </LinkContainer>
               <NavDropdown.Item href="#action/3.2">
                 Another action
               </NavDropdown.Item>
