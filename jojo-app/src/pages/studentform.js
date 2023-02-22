@@ -1,7 +1,6 @@
 //Sudent form component
 import React, { useState } from "react";
 
-
 export default function StudentForm() {
   const [student, setStudent] = useState({
     firstName: "",
@@ -49,7 +48,6 @@ export default function StudentForm() {
   const handleWorkexpInputChange = (event) => {
     setStudent({ ...student, workexp: event.target.value });
   };
-
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -140,7 +138,7 @@ export default function StudentForm() {
         <div>
           <label htmlFor="workexp">Work Experience: </label>
           <input
-            type="text" 
+            type="text"
             id="workexp"
             name="workexp"
             required
@@ -148,9 +146,8 @@ export default function StudentForm() {
             onChange={handleWorkexpInputChange}
           />
         </div>
-        
+
         <button type="submit">Submit</button>
-        
       </form>
     </section>
   );
