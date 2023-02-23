@@ -13,7 +13,7 @@ export default function JobPosts(props) {
     jobLocation,
     jobCompany,
     jobDate,
-  } = props.tempInfo;
+  } = props.info;
   return (
     <Container className="JobPost">
       <Row>
