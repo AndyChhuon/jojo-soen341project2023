@@ -63,6 +63,23 @@ export default function JojoNavbar() {
             </LinkContainer>
 
             <NavDropdown
+              title="apiTest"
+              id="basic-nav-dropdown"
+              className="background-grey"
+              style={{ color: "black" }}
+            >
+              <LinkContainer to="/apipost">
+                <NavDropdown.Item>ApiPost</NavDropdown.Item>
+              </LinkContainer>
+              <LinkContainer to="/apidelete">
+                <NavDropdown.Item>ApiDelete</NavDropdown.Item>
+              </LinkContainer>
+              <LinkContainer to="/apiput">
+                <NavDropdown.Item>ApiPut</NavDropdown.Item>
+              </LinkContainer>
+            </NavDropdown>
+
+            <NavDropdown
               title={navDropdownTitle}
               id="basic-nav-dropdown"
               className="background-grey"
