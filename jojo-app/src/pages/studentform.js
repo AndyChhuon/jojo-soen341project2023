@@ -1,6 +1,7 @@
 //Sudent form component
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
+import "./studentform.less"
 // import profile from "./../../Images/pfp.png";
 
 export default function StudentForm() {
@@ -68,9 +69,9 @@ export default function StudentForm() {
   //input fields for student form
 
   return (
-    <section>
+    <section className="StudentForm">
       <Container>
-        <h2>Student Form</h2>
+        <h2 className="title">Student Form</h2>
         <form onSubmit={submitHandler}>
           <div class="container">
             <div class="row">
