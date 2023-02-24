@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import "./studentform.less"
 // import profile from "./../../Images/pfp.png";
 
+
 export default function StudentForm() {
   const [student, setStudent] = useState({
     firstName: "",
@@ -231,6 +232,7 @@ export default function StudentForm() {
           </div>
         </form>
       </Container>
+
     </section>
   );
 }
