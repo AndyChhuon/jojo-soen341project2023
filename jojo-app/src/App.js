@@ -4,8 +4,9 @@ import { Route, Routes } from "react-router-dom";
 //import studentform
 import StudentForm from "./pages/studentform";
 import JobPosts from "./pages/JobPosts";
-
-import Home from "./pages/home";
+import ApiPost from "./pages/apipost";
+import ApiDelete from "./pages/apidelete";
+import ApiPut from "./pages/apiput";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         <Route exact path="/" element={<div></div>} />
         <Route path="/studentForm" element={<StudentForm />} />
         <Route path="/jobs" element={<JobPosts />} />
+        <Route path="/apipost" element={<ApiPost />} />
+        <Route path="/apidelete" element={<ApiDelete />} />
+        <Route path="/apiput" element={<ApiPut />} />
       </Routes>
     </>
   );
