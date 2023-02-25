@@ -15,7 +15,8 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<JobPosts />} />
+
         <Route path="/studentForm" element={<StudentForm />} />
         <Route path="/jobs" element={<JobPosts />} />
         <Route path="/apipost" element={<ApiPost />} />
