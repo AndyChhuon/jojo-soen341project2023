@@ -7,6 +7,7 @@ import JobPosts from "./pages/JobPosts";
 import ApiPost from "./pages/apipost";
 import ApiDelete from "./pages/apidelete";
 import ApiPut from "./pages/apiput";
+import Home from "./pages/home";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
       <Routes>
         <Route exact path="/" element={<JobPosts />} />
+
         <Route path="/studentForm" element={<StudentForm />} />
         <Route path="/jobs" element={<JobPosts />} />
         <Route path="/apipost" element={<ApiPost />} />
