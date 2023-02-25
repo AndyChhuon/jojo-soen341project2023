@@ -42,9 +42,6 @@ export default function StudentForm() {
     setStudent({ ...student, state: event.target.value });
   };
 
-  const handleSchoolInputChange = (event) => {
-    setStudent({ ...student, school: event.target.value });
-  };
   const handleWorkexpInputChange = (event) => {
     setStudent({ ...student, workexp: event.target.value });
   };
@@ -61,6 +58,10 @@ export default function StudentForm() {
   };
   const handleUsernameInputChange = (event) => {
     setStudent({ ...student, username: event.target.value });
+  };
+
+  const handleResumeInputChange = (event) => {
+    setStudent({ ...student, resume: event.target.value });
   };
 
   const submitHandler = (event) => {
@@ -179,6 +180,21 @@ export default function StudentForm() {
                 />
               </div>
             </div>
+            <hr></hr>
+          <div>
+          <label htmlFor="resume">Upload Resume:  </label>
+          <input 
+            type="file" 
+            id="resume" 
+            name="resume"
+            class="form-control"
+            required
+            value={student.resume}
+            onChange={handleResumeInputChange}
+            />
+            
+          </div>
+            
             <div class="form-group">
               <label htmlFor="workexp">Work Experience: </label>
               <textarea
@@ -192,7 +208,7 @@ export default function StudentForm() {
                 onChange={handleWorkexpInputChange}
               />
             </div>
-
+            
             <div class="form-group">
               <label htmlFor="education">Education: </label>
               <textarea
