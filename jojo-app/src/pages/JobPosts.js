@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import "./JobPosts.less";
 import jobPostSearch from "../Images/jobPostSearch.jpg";
 import JobPost from "../Components/JobPost/JobPost";
+import Spinner from "react-bootstrap/Spinner";
 
 export default function JobPosts() {
   //Blur Search bar
@@ -21,8 +22,15 @@ export default function JobPosts() {
     }
   };
 
+  const loading = (
+    <div className="jobs-loading-container">
+      <span className="search-text">Searching...</span>
+      <Spinner animation="border" size="sm" />
+    </div>
+  );
+
   //Fetch api
-  const [jobPosts, setJobPosts] = useState([]);
+  const [jobPosts, setJobPosts] = useState([loading]);
   useEffect(() => {
     fetch("https://jobapplicationsapi.azurewebsites.net/api/JobPostsAPI", {
       method: "GET", // default, so we can ignore

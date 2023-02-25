@@ -7,6 +7,7 @@ import JobPosts from "./pages/JobPosts";
 import ApiPost from "./pages/apipost";
 import ApiDelete from "./pages/apidelete";
 import ApiPut from "./pages/apiput";
+import Home from "./pages/home";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/studentForm" element={<StudentForm />} />
         <Route path="/jobs" element={<JobPosts />} />
         <Route path="/apipost" element={<ApiPost />} />
