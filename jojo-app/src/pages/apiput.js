@@ -12,6 +12,7 @@ export default function ApiPut() {
     jobCategory: "",
     jobLocation: "",
     jobCompany: "",
+    jobDate: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
@@ -126,6 +127,17 @@ export default function ApiPut() {
             required
             value={Api.jobCompany}
             onChange={handlejobCompanyInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="jobDate">Date End of post: </label>
+          <input
+            type="text"
+            id="jobDate"
+            name="jobDate"
+            required
+            value={Api.jobDate}
+            onChange={handlejobDateInputChange}
           />
         </div>
 

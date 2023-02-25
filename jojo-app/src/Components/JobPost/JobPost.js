@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import JobPopup from "../JobPopup/JobPopup";
 
 export default function JobPosts(props) {
   const {
@@ -45,11 +46,7 @@ export default function JobPosts(props) {
             </Row>
           </Container>
         </Col>
-        <Col xs={3} md={3} sm={3} className="center-button">
-          <Button className="button" variant="secondary" size="sm">
-            Apply Now
-          </Button>
-        </Col>
+        <JobPopup />
       </Row>
     </Container>
   );
