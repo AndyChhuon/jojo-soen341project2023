@@ -1,0 +1,3 @@
+[submodule "Jojo-api/JobApplications_API"]
+	path = Jojo-api/JobApplications_API
+	url = https://github.com/AndyChhuon/JobApplications_API.git

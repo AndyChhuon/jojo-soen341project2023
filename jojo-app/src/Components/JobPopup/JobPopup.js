@@ -5,10 +5,30 @@ import Col from "react-bootstrap/Col";
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 
-export default function JobPopup() {
+export default function JobPopup(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const { jobTitle, jobLocation, jobCompany, fullDescription, benefits } =
+    props.info;
+
+  let { workType, workTime } = props.info;
+
+  switch (workTime) {
+    case "FullTime":
+      workTime = "Full Time";
+      break;
+    case "PartTime":
+      workTime = "Part Time";
+      break;
+  }
+
+  switch (workType) {
+    case "InPerson":
+      workType = "In Person";
+      break;
+  }
 
   return (
     <>
@@ -27,35 +47,39 @@ export default function JobPopup() {
           <Modal.Title>Apply to Job</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h2>Software Developer</h2>
+          <h2>{jobTitle}</h2>
 
           <div className="subtitle-container">
-            <p className="padding-5">Samsung Ads</p>
+            <p className="padding-5">{jobCompany}</p>
           </div>
-          <p1>Montreal, QC • Remote</p1>
-          <p1 className="new-line">Full-time</p1>
+          <span className="p1">
+            {jobLocation} • {workType}
+          </span>
+          <span className="new-line p1">{workTime}</span>
           <Form.Group controlId="formFileSm" className="mb-3 upload">
             <p className="padding-5">📝 Cover Letter (PDF)</p>
 
             <Form.Control type="file" accept="application/pdf" size="sm" />
           </Form.Group>
           <h3 className="job-detail">Job detail</h3>
-          <p3>&#x1F4BC; Job type</p3>
+          <span>&#x1F4BC; Job type</span>
           <div className="job-type-tags">
-            <span className="job-type-tag">Full-time</span>
-            <span className="job-type-tag">Remote</span>
+            <span className="job-type-tag">{workTime}</span>
+            <span className="job-type-tag">{workTime}</span>
           </div>
 
           <h2 className="padding-5 padding-3-bottom">Benefits</h2>
           <div className="job-type-tags">
-            <span className="job-type-tag">Dental care</span>
-            <span className="job-type-tag">Paid time off</span>
+            {benefits.map((benefit) => {
+              return (
+                <span key={benefit} className="job-type-tag">
+                  {benefit}
+                </span>
+              );
+            })}
           </div>
-          <h3 className="padding-5">Full Job Description</h3>
-          <p3>Software Developer</p3>
-          <p3>Life at Sam sung Ads</p3>
-          <p2>add any thing you want</p2>
-          <p>This is the content of the popup box.</p>
+          <h3 className="padding-17">Full Job Description</h3>
+          <span className="full-description p2">{fullDescription}</span>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

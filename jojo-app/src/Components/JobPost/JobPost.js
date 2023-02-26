@@ -15,6 +15,7 @@ export default function JobPosts(props) {
     jobCompany,
     jobDate,
   } = props.info;
+
   return (
     <Container className="JobPost">
       <Row>
@@ -46,7 +47,7 @@ export default function JobPosts(props) {
             </Row>
           </Container>
         </Col>
-        <JobPopup />
+        <JobPopup info={props.info} />
       </Row>
     </Container>
   );

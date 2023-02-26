@@ -11,15 +11,16 @@ import Spinner from "react-bootstrap/Spinner";
 export default function JobPosts() {
   //Blur Search bar
   const [blurSearch, setBlurSearch] = useState(false);
+  const [search, setSearch] = useState("");
+
   const onSearchBarClick = (event) => {
     setBlurSearch(true);
-    event.target.innerHTML = "";
   };
   const onSearchBarBlur = (event) => {
     setBlurSearch(false);
-    if (event.target.innerHTML === "") {
-      event.target.innerHTML = "Search..";
-    }
+  };
+  const onSearchChange = (event) => {
+    setSearch(event.target.value);
   };
 
   const loading = (
@@ -29,18 +30,37 @@ export default function JobPosts() {
     </div>
   );
 
-  //Fetch api
   const [jobPosts, setJobPosts] = useState([loading]);
+  //Fetch api search state
   useEffect(() => {
-    fetch("https://jobapplicationsapi.azurewebsites.net/api/JobPostsAPI", {
-      method: "GET", // default, so we can ignore
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        let jobs = data.map((info) => <JobPost key={info.jobId} info={info} />);
-        setJobPosts(jobs);
-      });
-  }, []);
+    if (search === "") {
+      fetch("https://jobapplicationsapi.azurewebsites.net/api/JobPostsAPI", {
+        method: "GET", // default, so we can ignore
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          let jobs = data.map((info) => (
+            <JobPost key={info.jobId} info={info} />
+          ));
+          setJobPosts(jobs);
+        });
+    } else {
+      fetch(
+        "https://jobapplicationsapi.azurewebsites.net/api/JobPostsAPI/search/" +
+          search,
+        {
+          method: "GET", // default, so we can ignore
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          let jobs = data.map((info) => (
+            <JobPost key={info.jobId} info={info} />
+          ));
+          setJobPosts(jobs);
+        });
+    }
+  }, [search]);
 
   return (
     <>
@@ -59,21 +79,27 @@ export default function JobPosts() {
         ></img>
         <Container className="searchJobPost">
           <div className="searchOverlay">
-            <h5
+            <input
               className="searchBar"
               onFocus={onSearchBarClick}
               onBlur={onSearchBarBlur}
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              Search..
-            </h5>
+              placeholder="Search.."
+              onChange={onSearchChange}
+            ></input>
           </div>
         </Container>
-        <Container className="Jobs-Header">
-          <h3 className="jobs-text">Recent Jobs</h3>
-        </Container>
-        {jobPosts}
+      </Container>
+      <Container className="Jobs-Header">
+        <h3 className="jobs-text">Recent Jobs</h3>
+      </Container>
+      <Container className="padding-0">
+        {jobPosts.length > 0 ? (
+          jobPosts
+        ) : (
+          <div className="no-found">
+            <Container className="no-found">No jobs found</Container>
+          </div>
+        )}
       </Container>
     </>
   );
