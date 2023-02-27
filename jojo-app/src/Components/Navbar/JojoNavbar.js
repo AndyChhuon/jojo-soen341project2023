@@ -38,7 +38,7 @@ export default function JojoNavbar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <LinkContainer to="/" style={{ color: "black" }}>
-              <Nav.Link href="/" className="background-grey">
+              <Nav.Link className="background-grey">
                 <FontAwesomeIcon
                   className="pad-right-5"
                   icon={faHouse}
@@ -48,10 +48,10 @@ export default function JojoNavbar() {
               </Nav.Link>
             </LinkContainer>
 
-            <LinkContainer style={{ color: "black" }} to="/jobs">
+            <LinkContainer style={{ color: "black" }} to="/JobsManager">
               <Nav.Link className="background-grey">
                 <FontAwesomeIcon className="pad-right-5" icon={faBriefcase} />
-                Jobs
+                Add Jobs
               </Nav.Link>
             </LinkContainer>
 
@@ -61,23 +61,6 @@ export default function JojoNavbar() {
                 About
               </Nav.Link>
             </LinkContainer>
-
-            <NavDropdown
-              title="apiTest"
-              id="basic-nav-dropdown"
-              className="background-grey"
-              style={{ color: "black" }}
-            >
-              <LinkContainer to="/apipost">
-                <NavDropdown.Item>ApiPost</NavDropdown.Item>
-              </LinkContainer>
-              <LinkContainer to="/apidelete">
-                <NavDropdown.Item>ApiDelete</NavDropdown.Item>
-              </LinkContainer>
-              <LinkContainer to="/apiput">
-                <NavDropdown.Item>ApiPut</NavDropdown.Item>
-              </LinkContainer>
-            </NavDropdown>
 
             <NavDropdown
               title={navDropdownTitle}
