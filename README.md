@@ -35,3 +35,7 @@ Jojo seeks to fix this problem, thanks to an algorithm that matches various comp
 2. The software shall allow applicants to search for job posts.
 3. The software shall allow employers to upload job posts.
 4. The software shall match job posts with applicants' CVs.
+
+## Sprint Demos
+- Sprint 2: https://www.youtube.com/watch?v=C5FcmbjEbHU&ab_channel=AndyChhuon
+
