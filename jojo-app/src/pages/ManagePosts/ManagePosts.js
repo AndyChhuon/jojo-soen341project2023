@@ -54,7 +54,7 @@ export default function JobPosts() {
   }, []);
 
   return (
-    <>
+    <div className="ManagePosts">
       <Container className="ManageJobPosts">
         <Row>
           <Col md={3}>
@@ -84,6 +84,6 @@ export default function JobPosts() {
           Create Job Post
         </button>
       </Container>
-    </>
+    </div>
   );
 }

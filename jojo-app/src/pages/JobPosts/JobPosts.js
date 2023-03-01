@@ -63,7 +63,7 @@ export default function JobPosts() {
   }, [search]);
 
   return (
-    <>
+    <div className="JobPostsContainer">
       <Container className="jobPosts">
         <Row>
           <Col md={3}>
@@ -101,6 +101,6 @@ export default function JobPosts() {
           </div>
         )}
       </Container>
-    </>
+    </div>
   );
 }
