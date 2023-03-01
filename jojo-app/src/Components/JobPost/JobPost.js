@@ -1,9 +1,7 @@
 import "./JobPost.less";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 import JobPopup from "../JobPopup/JobPopup";
 
 export default function JobPosts(props) {
@@ -47,6 +45,7 @@ export default function JobPosts(props) {
             </Row>
           </Container>
         </Col>
+
         <JobPopup info={props.info} />
       </Row>
     </Container>

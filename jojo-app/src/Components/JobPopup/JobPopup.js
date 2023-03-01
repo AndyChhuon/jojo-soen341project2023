@@ -4,14 +4,29 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faTrashCan, faEdit } from "@fortawesome/free-solid-svg-icons";
+import JobEditPopup from "../JobEditPopup/JobEditPopup";
+import DeleteJobPopup from "../DeleteJobPopup/DeleteJobPopup";
 
 export default function JobPopup(props) {
   const [show, setShow] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleShowEdit = () => setShowEdit(true);
+  const handleShowDelete = () => setShowDelete(true);
 
-  const { jobTitle, jobLocation, jobCompany, fullDescription, benefits } =
-    props.info;
+  const {
+    jobTitle = "test",
+    jobLocation,
+    jobCompany,
+    fullDescription,
+    benefits,
+    icon = false,
+  } = props.info;
 
   let { workType, workTime } = props.info;
 
@@ -33,15 +48,52 @@ export default function JobPopup(props) {
   return (
     <>
       <Col xs={3} md={3} sm={3} className="center-button">
-        <Button
-          className="button"
-          variant="secondary"
-          size="sm"
-          onClick={handleShow}
-        >
-          View More
-        </Button>
+        {icon ? (
+          <>
+            <Button
+              className="button"
+              variant="secondary"
+              size="sm"
+              onClick={handleShowEdit}
+              style={{ width: "35px", padding: "5px", marginRight: "3px" }}
+            >
+              <FontAwesomeIcon icon={faEdit} />
+            </Button>
+            <Button
+              className="button"
+              variant="secondary"
+              size="sm"
+              onClick={handleShow}
+              style={{ width: "35px", padding: "5px", marginRight: "3px" }}
+            >
+              <FontAwesomeIcon icon={faEye} />
+            </Button>
+            <Button
+              className="button"
+              variant="secondary"
+              size="sm"
+              onClick={handleShowDelete}
+              style={{ width: "35px", padding: "5px" }}
+            >
+              <FontAwesomeIcon icon={faTrashCan} />
+            </Button>
+          </>
+        ) : (
+          <Button
+            className="button"
+            variant="secondary"
+            size="sm"
+            onClick={handleShow}
+          >
+            <span>View More</span>
+          </Button>
+        )}
       </Col>
+      <JobEditPopup info={{ show: showEdit, setShowEdit, ...props.info }} />
+      <DeleteJobPopup
+        info={{ show: showDelete, setShowDelete, ...props.info }}
+      />
+
       <Modal show={show} onHide={handleClose} className="popup">
         <Modal.Header closeButton>
           <Modal.Title>Apply to Job</Modal.Title>
@@ -65,7 +117,7 @@ export default function JobPopup(props) {
           <span>&#x1F4BC; Job type</span>
           <div className="job-type-tags">
             <span className="job-type-tag">{workTime}</span>
-            <span className="job-type-tag">{workTime}</span>
+            <span className="job-type-tag">{workType}</span>
           </div>
 
           <h2 className="padding-5 padding-3-bottom">Benefits</h2>
@@ -85,9 +137,13 @@ export default function JobPopup(props) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Apply Now
-          </Button>
+          {icon ? (
+            ":"
+          ) : (
+            <Button variant="primary" onClick={handleClose}>
+              Apply Now
+            </Button>
+          )}
         </Modal.Footer>
       </Modal>
     </>

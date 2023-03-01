@@ -2,12 +2,9 @@ import Navbar from "./Components/Navbar/JojoNavbar";
 //import route and routes
 import { Route, Routes } from "react-router-dom";
 //import studentform
-import StudentForm from "./pages/studentform";
-import JobPosts from "./pages/JobPosts";
-import ApiPost from "./pages/apipost";
-import ApiDelete from "./pages/apidelete";
-import ApiPut from "./pages/apiput";
-import Home from "./pages/home";
+import StudentForm from "./pages/StudentForm/studentform";
+import JobPosts from "./pages/JobPosts/JobPosts";
+import ManagePosts from "./pages/ManagePosts/ManagePosts";
 
 function App() {
   return (
@@ -18,10 +15,7 @@ function App() {
         <Route exact path="/" element={<JobPosts />} />
 
         <Route path="/studentForm" element={<StudentForm />} />
-        <Route path="/jobs" element={<JobPosts />} />
-        <Route path="/apipost" element={<ApiPost />} />
-        <Route path="/apidelete" element={<ApiDelete />} />
-        <Route path="/apiput" element={<ApiPut />} />
+        <Route path="/JobsManager" element={<ManagePosts />} />
       </Routes>
     </>
   );
