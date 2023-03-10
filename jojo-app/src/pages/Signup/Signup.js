@@ -1,4 +1,4 @@
-import "./Login.less";
+import "./Signup.less";
 import React, { useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -11,7 +11,7 @@ import { gapi } from "gapi-script";
 const clientId =
   "124118979451-5b03pb63uv3ogjgntaimga7tc4uirqcf.apps.googleusercontent.com";
 
-export default function Login() {
+export default function Signup() {
   useEffect(() => {
     function start() {
       gapi.client.init({
@@ -30,14 +30,8 @@ export default function Login() {
     console.log(response);
   };
   return (
-    <div className="login">
+    <div className="signup">
       <Row className="login-row">
-        <Col md={5} sm={0} className="login-text-col">
-          <Container className="login-text-container">
-            <h1>Turn your dreams into careers</h1>
-            <p>Kickstart your career with just a click of a button.</p>
-          </Container>
-        </Col>
         <Col md={7} sm={12} className="login-modal">
           <Container className="login-modal-container">
             <LinkContainer to="/">
@@ -49,11 +43,11 @@ export default function Login() {
 
             <form className="login-form-container">
               <div className="login-form">
-                <h1>Welcome back, Olivia</h1>
-                <p>Welcome back! Please enter your details.</p>
+                <h1>Create a new account</h1>
+                <p>It's quick and easy.</p>
                 <GoogleLogin
                   clientId={clientId}
-                  buttonText="Login With Google"
+                  buttonText="Sign Up With Google"
                   onSuccess={onSuccess}
                   onFailure={onFailure}
                   cookiePolicy={"single_host_origin"}
@@ -78,6 +72,12 @@ export default function Login() {
                   className="email-input pass-input"
                   required
                 ></input>
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  className="email-input pass-input"
+                  required
+                ></input>
                 <div className="remember_forgot_container">
                   <span className="center-rem">
                     <input
@@ -86,26 +86,33 @@ export default function Login() {
                       id="remember-checkbox"
                     ></input>
                     <label htmlFor="remember-checkbox">
-                      Remember for 30 days
+                      Accept
+                      <LinkContainer to="/">
+                        <a className="terms-cond">Terms and Conditions</a>
+                      </LinkContainer>
                     </label>
                   </span>
-                  <LinkContainer to="/">
-                    <a className="forgot-pass">Forgot Password</a>
-                  </LinkContainer>
                 </div>
 
                 <button type="submit" className="login-btn">
-                  Log in
+                  Sign Up
                 </button>
 
                 <div className="no-account-container">
-                  Don't have an account?
+                  Already have an account?
                   <LinkContainer to="/">
-                    <a>Sign up for free</a>
+                    <a>Login</a>
                   </LinkContainer>
                 </div>
               </div>
             </form>
+          </Container>
+        </Col>
+
+        <Col md={5} sm={0} className="login-text-col">
+          <Container className="login-text-container">
+            <h1>Turn your dreams into careers</h1>
+            <p>Kickstart your career with just a click of a button.</p>
           </Container>
         </Col>
       </Row>

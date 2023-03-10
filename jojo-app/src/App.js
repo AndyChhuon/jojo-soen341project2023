@@ -6,6 +6,7 @@ import StudentForm from "./pages/StudentForm/studentform";
 import JobPosts from "./pages/JobPosts/JobPosts";
 import ManagePosts from "./pages/ManagePosts/ManagePosts";
 import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/studentForm" element={<StudentForm />} />
         <Route path="/JobsManager" element={<ManagePosts />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </>
   );
