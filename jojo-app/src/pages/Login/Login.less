@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+
+
+.login {
+    background: url("../../Images/office_background.jpg");
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    background-size: cover;
+
+
+    .login-row {
+        height: 100%;
+    }
+
+    .login-modal {
+        backdrop-filter: blur(8px);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .login-text-col {
+        display: flex;
+        height: 100%;
+        padding: 0px 50px;
+    }
+
+    .login-text-container {
+        align-self: flex-end;
+        padding-bottom: 40px;
+    }
+
+    .login-modal-container {
+        padding: 7% 0px 0px 7%;
+        height: 100%;
+    }
+
+    .login-text-container h1 {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 800;
+        color: #FFFFFF;
+        max-width: 380px;
+    }
+
+    .center-jojo {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        .jojo-logo {
+            max-width: 40px;
+        }
+
+        .jojo-text {
+            font-family: 'Manrope';
+            font-weight: 600;
+            margin-left: 10px;
+
+            color: white;
+        }
+    }
+
+    .login-form-container {
+        display: flex;
+        justify-content: center;
+
+        .login-form {
+            display: block;
+            align-items: center;
+            height: 100%;
+            padding: 5% 5%;
+            color: white;
+            width: fit-content;
+
+            p {
+                font-family: 'Manrope';
+                font-style: normal;
+                font-weight: 400;
+            }
+
+            .google-login:hover {
+                background-color: rgba(254, 254, 254, 0.106) !important;
+
+
+            }
+
+            .google-login {
+
+
+
+                border: 1px solid #D9D9D9 !important;
+                padding: 5px 10px !important;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                box-sizing: border-box;
+                border-radius: 6px !important;
+                width: 500px !important;
+                background-color: transparent !important;
+
+                /* Auto layout */
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                color: white !important;
+
+                div {
+                    background-color: transparent !important;
+                }
+
+
+
+            }
+
+            .login-btn:hover {
+                background-color: #060606d5;
+            }
+
+            .login-btn {
+                height: 60px;
+                background-color: #060606;
+                width: 500px;
+                color: white;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                padding: 5px 10px;
+                margin-top: 50px;
+                box-sizing: border-box;
+                border-radius: 6px;
+
+            }
+
+            .no-account-container {
+                display: flex;
+                justify-content: center;
+                color: #E0E0E0;
+                margin-top: 10px;
+
+                a {
+                    color: white;
+                    margin-left: 8px;
+                }
+
+            }
+
+
+
+
+
+            @media (max-width: 900px) {
+                .google-login {
+                    width: 400px !important;
+                }
+
+                .login-btn {
+                    width: 400px !important;
+                }
+            }
+
+            @media (max-width: 400px) {
+                .google-login {
+                    width: 100% !important;
+                }
+
+                .login-btn {
+                    width: 100% !important;
+                }
+            }
+
+        }
+
+    }
+
+    .separator_container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .separator {
+            display: inline-block;
+            flex-grow: 1;
+            height: 1px;
+            background: white;
+        }
+
+        .sep1 {
+            margin-right: 5px;
+        }
+
+        .sep2 {
+            margin-left: 5px;
+        }
+
+        padding-bottom: 18px;
+    }
+
+
+
+
+    .email-input {
+        width: 100%;
+        background-color: transparent;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 1px solid #E0E0E0;
+        height: 48px;
+        color: white;
+
+    }
+
+    .email-input:focus {
+        outline: none;
+    }
+
+    .email-input::placeholder {
+        color: #c8c8c8;
+    }
+
+    .pass-input {
+        margin-top: 10px;
+    }
+
+    .remember_forgot_container {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 12px;
+        color: #e3e3e3;
+        margin-top: 12px;
+        font-family: 'Manrope';
+
+        .forgot-pass {
+            color: #e3e3e3;
+        }
+
+        .center-rem {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-checkbox {
+            background: #FFFFFF;
+            border: 1px solid #D5D5D5;
+            border-radius: 2px;
+            margin-right: 5px;
+        }
+    }
+
+
+
+
+
+
+    .login-text-container p {
+        font-style: normal;
+        font-weight: 300;
+        line-height: 27px;
+
+        color: #FFFFFF;
+    }
+
+    @media (max-width: 768px) {
+        .login-text-col {
+            display: none;
+        }
+    }
+
+}
