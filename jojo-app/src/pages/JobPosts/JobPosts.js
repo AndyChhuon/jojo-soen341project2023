@@ -74,7 +74,7 @@ export default function JobPosts() {
             <SearchJob onSearchChange={onSearchChange} />
           </Col>
           <Col md={8}>
-            <div className="Jobs-Header">Showing 1-8 of 40 Results</div>
+            <div className="Jobs-Header">Showing 1-8 of 8 Results</div>
             <div className="padding-0">
               {jobPosts.length > 0 ? (
                 jobPosts
