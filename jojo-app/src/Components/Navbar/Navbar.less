@@ -1,23 +1,75 @@
-.background-grey {
-    color: black;
-}
+.jojo-navbar {
+    position: absolute !important;
+    width: 100%;
+    z-index: 10;
+    padding-top: 10px;
+
+    //below 992px
+    @media (max-width: 991px) {
+        #basic-navbar-nav {
+            background-color: rgba(0, 0, 0, 0.837);
+        }
+    }
 
 
-.background-grey:hover {
-    background-color: rgba(180, 190, 203, 0.4);
-    border-radius: 6px;
-    transition: 0.6s;
-}
+    .background-grey {
+        color: white;
+    }
 
-.pad-right-5 {
-    padding-right: 5px;
-}
+    .navbar-items {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.navbar {
-    font-family: Montserrat, sans-serif;
-    font-size: 14px;
-    border-bottom: solid;
-    border-bottom-width: 0.0625rem;
-    border-bottom-color: #e4e2e0;
+    .navbar-nav {
+        display: flex;
+        width: 32%;
+        justify-content: space-between;
+        margin-left: auto;
+    }
 
+    //media query below 1200
+    @media (max-width: 1200px) {
+        .navbar-nav {
+            width: 40%;
+        }
+    }
+
+    .center-jojo {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+
+
+        .jojo-text {
+            font-family: 'Manrope';
+            font-weight: 600;
+            margin-left: 10px;
+
+            color: white;
+        }
+    }
+
+    .dropdown-toggle::after {
+        color: white !important;
+    }
+
+
+    .background-grey:hover {
+        background-color: rgba(180, 190, 203, 0.4);
+        border-radius: 6px;
+        transition: 0.6s;
+    }
+
+    .pad-right-5 {
+        padding-right: 5px;
+    }
+
+    .navbar {
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+
+
+    }
 }

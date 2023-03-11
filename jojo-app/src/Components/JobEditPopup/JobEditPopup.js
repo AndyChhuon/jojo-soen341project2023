@@ -133,7 +133,7 @@ export default function JobEditPopup(props) {
   };
 
   return (
-    <Modal show={show} onHide={handleClose} className="popup">
+    <Modal show={show} onHide={handleClose} className="jobEditPopup">
       <Form onSubmit={handleEdit}>
         <Modal.Header closeButton>
           <Modal.Title>Edit this Job</Modal.Title>
@@ -281,7 +281,7 @@ export default function JobEditPopup(props) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" className="btn-warning" type="submit">
+          <Button variant="primary" className="btn-green" type="submit">
             Save Changes
           </Button>
         </Modal.Footer>

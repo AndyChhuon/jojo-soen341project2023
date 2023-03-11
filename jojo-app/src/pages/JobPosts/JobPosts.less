@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
 .JobPostsContainer {
+
+    .jobPostsRow {
+        padding: 40px 8%;
+    }
+
     .jobPosts {
 
         @media (max-width: 767px) {
@@ -28,49 +35,9 @@
 
     }
 
-    .jobPostsSearch {
-        backdrop-filter: blur(20px);
-        margin-top: 20px;
-
-        .jobPostsSearchImg {
-            width: 100%;
-            filter: blur(1px);
-        }
-
-        .searchJobPost {
-            display: flex;
-            position: fixed;
-            top: 45%;
-            height: 100%t;
-            justify-content: center;
-
-            .searchOverlay {
-                width: 80%;
-                display: flex;
-                justify-content: center;
-                height: fit-content;
-
-                .searchBar {
-                    background: white;
-                    border: 1px solid #ddd;
-                    border-radius: 100px;
-                    padding: 10px;
-                    color: #505060;
-                    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, .15);
-                    width: 60%;
-                    height: fit-content;
-                }
-            }
-
-        }
-    }
 
     .Jobs-Header {
-        padding: 18px 20px 15px 30px !important;
-        margin-top: 20px;
-        background-color: #D9D9D9;
-        display: flex;
-        align-items: center;
+        padding-top: 25px;
 
         .jobs-text {
             color: #222755;
