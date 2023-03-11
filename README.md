@@ -12,7 +12,7 @@ Jojo seeks to fix this problem, thanks to an algorithm that matches various comp
 
 ## Team Members
 
-- Andy Chhuon - Technical Lead / Backend Developer (Github: AndyChhuon)
+- Andy Chhuon - Technical Lead / Full-Stack Developer (Github: AndyChhuon)
 - Kevin Xu - Front-end developer (Github: Starmarke)
 - Camila-Paz Vejar-Rojas - Front-end developer/Project Manager (Github: camilavejar)
 - Rongmin Gan - Front-end developer (Github: 56852733)
