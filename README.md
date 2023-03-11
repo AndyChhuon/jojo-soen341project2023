@@ -13,11 +13,11 @@ Jojo seeks to fix this problem, thanks to an algorithm that matches various comp
 ## Team Members
 
 - Andy Chhuon - Technical Lead / Full-Stack Developer (Github: AndyChhuon)
-- Kevin Xu - Front-end developer (Github: Starmarke)
+- Kevin Xu - Front-end developer + UI/UX (Github: Starmarke)
 - Camila-Paz Vejar-Rojas - Front-end developer/Project Manager (Github: camilavejar)
-- Rongmin Gan - Front-end developer (Github: 56852733)
-- Hanyu Duan - Front-end developer (Github: hanyuduan0131)
-- Tanzila Tabassum-Front-end developer (Github: Tanzi04)
+- Rongmin Gan - Front-end developer + UI/UX (Github: 56852733)
+- Hanyu Duan - Front-end developer + UI/UX (Github: hanyuduan0131)
+- Tanzila Tabassum-Front-end developer + UI/UX (Github: Tanzi04)
 
 ## Technologies
 
