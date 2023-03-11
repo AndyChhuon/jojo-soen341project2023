@@ -4,21 +4,16 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./JobPosts.less";
-import jobPostSearch from "../../Images/jobPostSearch.jpg";
 import JobPost from "../../Components/JobPost/JobPost";
 import Spinner from "react-bootstrap/Spinner";
+import Header from "../../Components/Header/Header";
+import SearchJob from "../../Components/SearchJob/SearchJob";
 
 export default function JobPosts() {
   //Blur Search bar
   const [blurSearch, setBlurSearch] = useState(false);
   const [search, setSearch] = useState("");
 
-  const onSearchBarClick = (event) => {
-    setBlurSearch(true);
-  };
-  const onSearchBarBlur = (event) => {
-    setBlurSearch(false);
-  };
   const onSearchChange = (event) => {
     setSearch(event.target.value);
   };
@@ -63,44 +58,31 @@ export default function JobPosts() {
   }, [search]);
 
   return (
-    <div className="JobPostsContainer">
-      <Container className="jobPosts">
-        <Row>
-          <Col md={3}>
-            <h1 className="titleBlue">Find Your Jobs</h1>
+    <>
+      <Header
+        headerText="Job Listings"
+        subheaderText="Search Your Career Opportunity Through Our High Quality Jobs"
+      />
+
+      <div className="JobPostsContainer">
+        <Row className="jobPostsRow">
+          <Col md={4}>
+            <SearchJob onSearchChange={onSearchChange} />
+          </Col>
+          <Col md={8}>
+            <div className="Jobs-Header">Showing 1-8 of 40 Results</div>
+            <div className="padding-0">
+              {jobPosts.length > 0 ? (
+                jobPosts
+              ) : (
+                <div className="no-found">
+                  <Container className="no-found">No jobs found</Container>
+                </div>
+              )}
+            </div>
           </Col>
         </Row>
-      </Container>
-      <Container className="jobPostsSearch">
-        <img
-          className="jobPostsSearchImg"
-          src={jobPostSearch}
-          style={blurSearch ? { filter: "blur(5px)" } : {}}
-        ></img>
-        <Container className="searchJobPost">
-          <div className="searchOverlay">
-            <input
-              className="searchBar"
-              onFocus={onSearchBarClick}
-              onBlur={onSearchBarBlur}
-              placeholder="Search.."
-              onChange={onSearchChange}
-            ></input>
-          </div>
-        </Container>
-      </Container>
-      <Container className="Jobs-Header">
-        <h3 className="jobs-text">Recent Jobs</h3>
-      </Container>
-      <Container className="padding-0">
-        {jobPosts.length > 0 ? (
-          jobPosts
-        ) : (
-          <div className="no-found">
-            <Container className="no-found">No jobs found</Container>
-          </div>
-        )}
-      </Container>
-    </div>
+      </div>
+    </>
   );
 }

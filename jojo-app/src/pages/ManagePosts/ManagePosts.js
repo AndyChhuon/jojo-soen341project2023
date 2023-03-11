@@ -7,6 +7,7 @@ import "./ManagePosts.less";
 import JobPost from "../../Components/JobPost/JobPost";
 import Spinner from "react-bootstrap/Spinner";
 import CreateJobPopup from "../../Components/CreateJobPopup/CreateJobPopup";
+import Header from "../../Components/Header/Header";
 
 export default function JobPosts() {
   const updatePosts = () => {
@@ -54,36 +55,42 @@ export default function JobPosts() {
   }, []);
 
   return (
-    <div className="ManagePosts">
-      <Container className="ManageJobPosts">
-        <Row>
-          <Col md={3}>
-            <h1 className="titleBlue">My Postings</h1>
-          </Col>
-        </Row>
-      </Container>
-      <Container className="Jobs-Header">
-        <h3 className="jobs-text">Posted Jobs</h3>
-      </Container>
-      <Container className="padding-0">
-        {jobPosts.length > 0 ? (
-          jobPosts
-        ) : (
-          <div className="no-found">
-            <Container className="no-found">No jobs posted</Container>
-          </div>
-        )}
-      </Container>
-      <CreateJobPopup info={{ show: showCreate, setShowCreate, updatePosts }} />
-      <Container className="createbtn">
-        <button
-          onClick={handleShowCreate}
-          type="submit"
-          className="btn btn-dark"
-        >
-          Create Job Post
-        </button>
-      </Container>
-    </div>
+    <>
+      <Header
+        headerText="Manage Job Posts"
+        subheaderText="View and edit your job postings "
+      />
+      <div className="ManagePosts">
+        <Container className="ManageJobPosts">
+          <Row>
+            <Col md={3}>
+              <div className="Jobs-Header">Showing 1-8 of 40 Results</div>
+            </Col>
+          </Row>
+        </Container>
+
+        <Container>
+          {jobPosts.length > 0 ? (
+            jobPosts
+          ) : (
+            <div className="no-found">
+              <Container className="no-found">No jobs posted</Container>
+            </div>
+          )}
+        </Container>
+        <CreateJobPopup
+          info={{ show: showCreate, setShowCreate, updatePosts }}
+        />
+        <Container className="createbtn">
+          <button
+            onClick={handleShowCreate}
+            type="submit"
+            className="btn btn-dark"
+          >
+            Create Job Post
+          </button>
+        </Container>
+      </div>
+    </>
   );
 }
